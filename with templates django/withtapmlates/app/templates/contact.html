@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+</head>
+
+<body style="
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(120deg, #89f7fe, #66a6ff);
+    font-family:Arial, sans-serif;
+">
+
+    <div style="
+        background:#fff;
+        padding:40px;
+        width:420px;
+        border-radius:12px;
+        box-shadow:0 15px 30px rgba(0,0,0,0.2);
+    ">
+
+        <h2 style="text-align:center; margin-bottom:20px; color:#333;">
+            📩 Contact Us
+        </h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <input type="text" name="name" placeholder="Your Name" required
+                style="width:100%; padding:12px; margin-bottom:15px;
+                border-radius:6px; border:1px solid #ccc;">
+
+            <input type="email" name="email" placeholder="Your Email" required
+                style="width:100%; padding:12px; margin-bottom:15px;
+                border-radius:6px; border:1px solid #ccc;">
+
+            <textarea name="message" placeholder="Your Message" required
+                style="width:100%; padding:12px; height:100px;
+                border-radius:6px; border:1px solid #ccc; margin-bottom:20px;">
+            </textarea>
+
+            <button type="submit"
+                style="
+                width:100%;
+                padding:12px;
+                background:#66a6ff;
+                color:white;
+                border:none;
+                border-radius:25px;
+                font-size:16px;
+                cursor:pointer;">
+                Send Message
+            </button>
+        </form>
+
+    </div>
+
+</body>
+</html>
