@@ -11,3 +11,16 @@ class companyDetails(models.Model):
     about=models.TextField()
     added_date=models.DateTimeField(auto_now=True)
     active=models.BooleanField(default=True)
+
+class Employee(models.Model):
+   
+    name = models.CharField(max_length=100)
+    designation = models.CharField(max_length=100)
+    salary = models.DecimalField(max_digits=10, decimal_places=2)
+    email = models.EmailField(unique=True)
+    joining_date = models.DateField()    
+    company = models.ForeignKey(
+        companyDetails,
+        on_delete=models.CASCADE,   # ✅ delete company → employees auto delete
+        
+    )
